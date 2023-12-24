@@ -1,0 +1,1 @@
+ALTER TABLE registrations ADD COLUMN bill_code VARCHAR(100) DEFAULT NULL;

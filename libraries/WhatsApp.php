@@ -21,10 +21,10 @@ _Wassalamualaikum Warahmatullahi Wabarakatuh_";
     {
         $message = "_Assalamualaikum warahmatullahi wabarakatuh_
 
-Terima kasih telah melakukan pembayaran atas tagihan no:xxxxx
+Terima kasih telah melakukan pembayaran atas tagihan no : $data->bill_code
 Berikut adalah PIN pengisian formulir : *".$data->PIN."*
 
-Wassalamualaikum Warahmatullahi Wabarakatuh";
+_Wassalamualaikum Warahmatullahi Wabarakatuh_";
 
         $this->sendWa(62 . $data->phone, $message);
     }
@@ -33,7 +33,18 @@ Wassalamualaikum Warahmatullahi Wabarakatuh";
     {
         $message = "_Assalamualaikum warahmatullahi wabarakatuh_
 
-Data Bapak/Ibu telah kami terima. Selanjutnya harap mengikuti Observasi yang dilaksanakan pada:
+Data Bapak/Ibu telah terkirim ke sistem dan Petugas akan memverifikasi data formulir pendaftar.
+
+_Wassalamualaikum Warahmatullahi Wabarakatuh_";
+
+        $this->sendWa(62 . $data->phone, $message);
+    }
+    
+    function sendNotifTestSchedule($data)
+    {
+        $message = "_Assalamualaikum warahmatullahi wabarakatuh_
+
+Data Bapak/Ibu telah kami terima. Selanjutnya harap mengikuti Observasi yang dilaksanakan pada: ".env('TEST_SCHEDULE','')."
 
 _Wassalamualaikum Warahmatullahi Wabarakatuh_";
 

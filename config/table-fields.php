@@ -1,5 +1,9 @@
 <?php return [
     'registrations' => [
+        'bill_code' => [
+            'label' => 'Kode Tagihan',
+            'type' => 'text',
+        ],
         'name' => [
             'label' => 'Nama',
             'type' => 'text',

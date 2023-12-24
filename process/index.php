@@ -26,12 +26,14 @@ if(Request::isMethod('POST'))
     ], $_POST);
 
     // save registration data to database
+    $bill_code = strtoupper(substr(md5(strtotime('now')), 0, 8));
     $db = new Database;
     $data = $db->insert('registrations', [
         'name'  => $_POST['name'],
         'phone' => $_POST['phone'],
         'email' => $_POST['email'],
         'status' => 'MENUNGGU PEMBAYARAN',
+        'bill_code' => $bill_code,
     ]);
 
     // notification for payment instructions

@@ -158,7 +158,8 @@
                     
                     <div class="text-center">
                         <?php if($data->status == 'PEMBAYARAN FORMULIR DITERIMA'): ?>
-                        <a href="<?=routeTo('ppdb/verified', ['id' => $data->id])?>" class="btn btn-primary" onclick="if(confirm('Apakah anda yakin akan memverifikasi data ini ?')){return true}else{return false}">Verifikasi</a>
+                            <a href="<?=routeTo('ppdb/notif-test-schedule', ['id' => $data->id])?>" class="btn btn-primary" onclick="if(confirm('Apakah anda yakin akan mengirimkan jadwal observasi pada calon peserta didik ini ?')){return true}else{return false}">Kirim Notif Observasi</a>
+                            <a href="<?=routeTo('ppdb/verified', ['id' => $data->id])?>" class="btn btn-primary" onclick="if(confirm('Apakah anda yakin akan memverifikasi data ini ?')){return true}else{return false}">Verifikasi Hasil Test</a>
                         <?php elseif($data->status == 'HASIL TES DALAM VERIFIKASI'): ?>
                         <a href="<?=routeTo('ppdb/accept', ['id' => $data->id])?>" class="btn btn-primary" onclick="if(confirm('Apakah anda yakin akan menerima calon peserta didik ini ?')){return true}else{return false}">Terima</a>
                         <?php endif ?>
