@@ -1,0 +1,31 @@
+CREATE TABLE registrations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL,
+    phone VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    PIN VARCHAR(100) DEFAULT NULL,
+    `status` VARCHAR(100) DEFAULT NULL,
+    payment_request JSON DEFAULT NULL,
+    payment_response JSON DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT NULL
+);
+
+CREATE TABLE formulirs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    registration_id INT NOT NULL,
+    NIK VARCHAR(100) NOT NULL,
+    `name` VARCHAR(100) NOT NULL,
+    nickname VARCHAR(100) NOT NULL,
+    gender VARCHAR(100) NOT NULL,
+    birthplace VARCHAR(100) NOT NULL,
+    birthdate VARCHAR(100) NOT NULL,
+    district VARCHAR(100) NOT NULL,
+    subdistrict VARCHAR(100) NOT NULL,
+    village VARCHAR(100) NOT NULL,
+    `address` TEXT NOT NULL,
+    metadata JSON DEFAULT NULL,
+    `status` VARCHAR(100) DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT NULL
+);
