@@ -22,7 +22,9 @@ _Wassalamualaikum Warahmatullahi Wabarakatuh_";
         $message = "_Assalamualaikum warahmatullahi wabarakatuh_
 
 Terima kasih telah melakukan pembayaran atas tagihan no : $data->bill_code
-Berikut adalah PIN pengisian formulir : *".$data->PIN."*
+Berikut adalah PIN dan Link pengisian formulir :
+Link : ".routeTo('ppdb/check')."
+PIN : *".$data->PIN."*
 
 _Wassalamualaikum Warahmatullahi Wabarakatuh_";
 
