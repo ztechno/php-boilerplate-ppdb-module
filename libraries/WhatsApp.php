@@ -23,7 +23,7 @@ _Wassalamualaikum Warahmatullahi Wabarakatuh_";
 
 Terima kasih telah melakukan pembayaran atas tagihan no : $data->bill_code
 Berikut adalah PIN dan Link pengisian formulir :
-Link : ".routeTo('ppdb/check')."
+Link : https://s.id/FormPPDB-AlazharBlitar
 PIN : *".$data->PIN."*
 
 _Wassalamualaikum Warahmatullahi Wabarakatuh_";
