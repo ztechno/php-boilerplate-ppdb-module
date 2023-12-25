@@ -27,7 +27,7 @@ $data->formulir = $db->single('formulirs',[
     'registration_id' => $data->id
 ]);
 
-$data->formulir->metadata = $data->formulir ? json_decode($data->formulir->metadata) : [];
+$data->formulir->metadata = $data->formulir->metadata ? json_decode($data->formulir->metadata) : [];
 
 if(Request::isMethod('POST'))
 {
