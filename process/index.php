@@ -18,10 +18,10 @@ if(Request::isMethod('POST'))
             'required'
         ],
         'phone' => [
-            'required','unique:registrations,phone,'.$_POST['phone']
+            'required','unique:registrations',
         ],
         'email' => [
-            'required','unique:registrations,email,'.$_POST['email']
+            'required','unique:registrations'
         ],
     ], $_POST);
 
