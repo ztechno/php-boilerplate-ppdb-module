@@ -61,6 +61,16 @@
                             </div>
                         </div>
 
+                        <div class="form-group mb-3">
+                            <label for="" class="mb-1 fw-bolder">Kelas</label>
+                            <select name="metadata[studyclass]" id="" class="form-control" required>
+                                <option value=""></option>
+                                <?php foreach(['Toddler','Kelompok Bermain','TK A','TK B'] as $studyclass): ?>
+                                <option <?=$data->formulir&&isset($data->formulir->metadata->studyclass)&&$data->formulir->metadata->studyclass == $studyclass?'selected=""':''?>><?=$studyclass?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+
                         <hr>
 
                         <h4>Alamat / Tempat Tinggal</h4>
