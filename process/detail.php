@@ -7,13 +7,14 @@ Page::set_title('Detail Formulir PPDB');
 
 $db = new Database;
 $id = $_GET['id'];
-$data = $db->single('registrations',[
+$formulir = $db->single('formulirs',[
     'id' => $id
 ]);
-
-$data->formulir = $db->single('formulirs',[
-    'registration_id' => $data->id
+$data = $db->single('registrations',[
+    'id' => $formulir->registration_id
 ]);
+
+$data->formulir = $formulir;
 
 $data->formulir->metadata = json_decode($data->formulir->metadata);
 
