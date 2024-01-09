@@ -52,11 +52,11 @@ if(Request::isMethod('POST'))
     }
     else
     {
-        Validation::run([
-            'NIK' => [
-                'required','unique:formulirs,NIK,'.$data->formulir->NIK
-            ]
-        ], $_POST['formulir']);
+        // Validation::run([
+        //     'NIK' => [
+        //         'required','unique:formulirs,NIK,'.$data->formulir->NIK
+        //     ]
+        // ], $_POST['formulir']);
 
         $formulir['updated_at'] = date('Y-m-d H:i:s');
         $db->update('formulirs', $formulir, [
