@@ -34,12 +34,6 @@ if($data->formulir)
 
 if(Request::isMethod('POST'))
 {
-    Validation::run([
-        'NIK' => [
-            'required','unique:formulirs'
-        ]
-    ], $_POST['formulir']);
-
     $formulir = $_POST['formulir'];
     $formulir['registration_id'] = $data->id;
     $formulir['metadata'] = json_encode($_POST['metadata']);
@@ -47,6 +41,13 @@ if(Request::isMethod('POST'))
 
     if(!$data->formulir)
     {
+        Validation::run([
+            'NIK' => [
+                'required','unique:formulirs'
+            ]
+        ], $_POST['formulir']);
+    
+        
         $db->insert('formulirs', $formulir);
     }
     else
