@@ -36,7 +36,7 @@ if(Request::isMethod('POST'))
 {
     Validation::run([
         'NIK' => [
-            'required','unique:formulirs,NIK,'.$_POST['formulir']['NIK']
+            'required','unique:formulirs'
         ]
     ], $_POST['formulir']);
 
