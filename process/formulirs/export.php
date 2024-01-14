@@ -54,12 +54,12 @@ foreach ($data as $formulir) {
     $sheet->setCellValue('M' . $row, $formulir->metadata->RT . ' / ' . $formulir->metadata->RW); 
     $sheet->setCellValue('N' . $row, $formulir->metadata->dad->NIK); 
     $sheet->setCellValue('O' . $row, $formulir->metadata->dad->name); 
-    $sheet->setCellValue('P' . $row, $formulir->metadata->dad->birtplace . ' / ' . $formulir->metadata->dad->birthdate); 
+    $sheet->setCellValue('P' . $row, $formulir->metadata->dad->birthplace . ' / ' . $formulir->metadata->dad->birthdate); 
     $sheet->setCellValue('Q' . $row, $formulir->metadata->dad->phone); 
     $sheet->setCellValue('R' . $row, $formulir->metadata->dad->job); 
     $sheet->setCellValue('S' . $row, $formulir->metadata->mom->NIK); 
     $sheet->setCellValue('T' . $row, $formulir->metadata->mom->name); 
-    $sheet->setCellValue('U' . $row, $formulir->metadata->mom->birtplace . ' / ' . $formulir->metadata->mom->birthdate); 
+    $sheet->setCellValue('U' . $row, $formulir->metadata->mom->birthplace . ' / ' . $formulir->metadata->mom->birthdate); 
     $sheet->setCellValue('V' . $row, $formulir->metadata->mom->phone); 
     $sheet->setCellValue('W' . $row, $formulir->metadata->mom->job); 
     $row++; 
