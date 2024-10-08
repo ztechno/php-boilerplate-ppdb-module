@@ -81,31 +81,67 @@ _Wassalamualaikum Warahmatullahi Wabarakatuh_";
     function sendWa($to, $message)
     {
         try {
-            $data = [
-                'api_key' => env('WA_API_KEY'),
-                'sender'  => env('WA_SENDER_NUMBER'),
-                'number'  => $to,
-                'message' => $message
+            $apiKey = env('WEBISNIS_API_KEY');
+            $deviceId = env('WEBISNIS_DEVICE_ID');
+            //code...
+            $body = [
+                'device_id' => $deviceId,
+                'phone' => $to,
+                'content' => $message
             ];
             
             $curl = curl_init();
+
             curl_setopt_array($curl, array(
-                CURLOPT_URL => "https://wa.alazharblitar.sch.id/app/api/send-message",
+                CURLOPT_URL => "https://wa.webisnis.id/api/whatsapp/messages/send",
                 CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
+                CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
                 CURLOPT_TIMEOUT => 0,
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS => json_encode($data))
-            );
-            
-            curl_exec($curl);
-            
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => $body,
+                CURLOPT_HTTPHEADER => array(
+                    'Authorization: Bearer '.$apiKey,
+                ),
+            ));
+
+            $response = curl_exec($curl);
+
             curl_close($curl);
+            return json_decode($response);
         } catch (\Throwable $th) {
-            // throw $th;
+            //throw $th;
+            return ['error' => $th->getMessage()];
         }
+        
+        // try {
+        //     $data = [
+        //         'api_key' => env('WA_API_KEY'),
+        //         'sender'  => env('WA_SENDER_NUMBER'),
+        //         'number'  => $to,
+        //         'message' => $message
+        //     ];
+            
+        //     $curl = curl_init();
+        //     curl_setopt_array($curl, array(
+        //         CURLOPT_URL => "https://wa.alazharblitar.sch.id/app/api/send-message",
+        //         CURLOPT_RETURNTRANSFER => true,
+        //         CURLOPT_ENCODING => "",
+        //         CURLOPT_MAXREDIRS => 10,
+        //         CURLOPT_TIMEOUT => 0,
+        //         CURLOPT_FOLLOWLOCATION => true,
+        //         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        //         CURLOPT_CUSTOMREQUEST => "POST",
+        //         CURLOPT_POSTFIELDS => json_encode($data))
+        //     );
+            
+        //     curl_exec($curl);
+            
+        //     curl_close($curl);
+        // } catch (\Throwable $th) {
+        //     // throw $th;
+        // }
     }
 }

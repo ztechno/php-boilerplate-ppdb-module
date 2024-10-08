@@ -62,10 +62,10 @@
                         </div>
 
                         <div class="form-group mb-3">
-                            <label for="" class="mb-1 fw-bolder">Kelas</label>
+                            <label for="" class="mb-1 fw-bolder">Kelas/Jenjang</label>
                             <select name="metadata[studyclass]" id="" class="form-control" required>
-                                <option value=""></option>
-                                <?php foreach(['Toddler','Kelompok Bermain','TK A','TK B'] as $studyclass): ?>
+                                <option value="">Pilih Kelas/Jenjang</option>
+                                <?php foreach(['Toddler','Kelompok Bermain','TK A','TK B','SD'] as $studyclass): ?>
                                 <option <?=$data->formulir&&isset($data->formulir->metadata->studyclass)&&$data->formulir->metadata->studyclass == $studyclass?'selected=""':''?>><?=$studyclass?></option>
                                 <?php endforeach ?>
                             </select>
